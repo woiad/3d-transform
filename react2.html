@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react</title>
+</head>
+<style>
+    *{margin: 0;padding: 0}
+    .box{width: 200px;height: 200px;margin-top: 200px;position: relative;left: 50%;margin-left: -100px;transform-style: preserve-3d;transform: rotateX(57deg) rotateY(-30deg);-webkit-transform: rotateX(57deg) rotateY(-30deg)}
+    .cube{position: absolute;width: 200px;height: 200px;opacity: .7}
+    .up{background: red;transform: rotateY(90deg) translateZ(100px);-webkit-transform: rotateX(90deg) translateZ(100px);}
+    .down{background: orange;transform: rotateY(-90deg) translateZ(100px);-webkit-transform: rotateY(-90deg) translateZ(100px);}
+    .left{background: yellow;transform: rotateY(-90deg) translateZ(100px);-webkit-transform: rotateY(-90deg) translateZ(100px);}
+    .right{background: blue;transform: rotateX(90deg) translateZ(100px);-webkit-transform: rotateX(90deg) translateZ(100px);}
+    .before{background: cyan;transform: translateZ(100px);-webkit-transform: translateZ(100px);}
+    .after{background: purple;transform: translateZ(-100px);-webkit-transform: translateZ(-100px)}
+
+
+</style>
+<body>
+    <div class="box" id="box">
+        <div class="cube up">1</div>
+        <div class="cube down">2</div>
+        <div class="cube left">3</div>
+        <div class="cube right">4</div>
+        <div class="cube before">5</div>
+        <div class="cube after">6</div>
+    </div>
+    <script>
+        let box = document.getElementById('box')
+        let deg = 10
+        setInterval(() => {
+            deg +=10
+            box.style.transform = 'rotateX(' + deg + 'deg) rotateY(' + -deg + 'deg)'
+        }, 500)
+    </script>
+</body>
+</html>

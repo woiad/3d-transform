@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react</title>
+</head>
+<style>
+    @-webkit-keyframes spin {
+        from{
+            -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+        }
+        to{
+            -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+        }
+    }
+    html{
+        background: -webkit-radial-gradient(center, ellipse, #430d6d 0%, #000000 100%);
+        background: radial-gradient(ellipse at center, #430d4d 0%, #000000 100%);
+        height: 100%;
+    }
+    .stage{
+        position: absolute;
+        width: 20em;
+        height: 20em;
+        left: 50%;
+        top: 50%;
+        margin-left: -10em;
+        margin-top: -10em;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+    }
+    .cube{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transform: rotateX(20deg) rotateY(20deg);
+        -webkit-animation: 6s spin linear infinite;
+        animation: 6s spin linear infinite;
+    }
+    .cube *{
+        background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px), linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(54, 226, 248, 0.5) 0%, rgba(54, 226, 248, 0.5) 3px, rgba(0, 0, 0, 0) 0px);
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid rgba(54, 226, 248, .4);
+        box-shadow: 0 0 5em rgba(0, 128, 0, .4);
+        -webkit-box-shadow: 0 0 5em rgba(0, 128, 0, .4);
+        -webkit-background-size: 2.5em 2.5em;
+        background-size: 2.5em 2.5em;
+    }
+    .font{
+        transform: translateZ(10em) rotateY(0deg);
+        -webkit-transform: translateZ(10em) rotateY(0deg);
+    }
+    .back{
+        transform: translateZ(-10em) rotateX(180deg);
+        -webkit-transform: translateZ(-10em) rotateX(180deg);
+    }
+    .left {
+        transform: rotateY(-90deg) translateZ(10em);
+        -webkit-transform: rotateY(-90deg) translateZ(10em);
+    }
+    .right{
+        transform: rotateY(90deg) translateZ(10em);
+        -webkit-transform: rotateY(90deg) translateZ(10em);
+    }
+    .top{
+        transform: rotateX(90deg) translsteZ(10em);
+        -webkit-transform: rotateX(90deg) translateZ(10em);
+    }
+    .bottom{
+        transform: rotateX(-90deg) translateZ(10em);
+        -webkit-transform: rotateX(-90deg) translateZ(10em);
+    }
+</style>
+<body>
+    <div class="stage">
+        <div class="cube">
+            <div class="font"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
